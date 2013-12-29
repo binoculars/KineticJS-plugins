@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+  <head>
+    <meta charset="utf-8">
+    <title>KineticJS Mocha Tests</title>
+    <link rel="stylesheet" href="../node_modules/mocha/mocha.css" />
+    <style>
+      #mocha {
+        margin-top: 20px;
+      }
+      #mocha .test {
+        overflow: auto;
+      }
+      h1 {
+        font-family: Calibri;
+        margin-left: 10px;
+      }
+      h2.kinetic-title {
+        font-family: Calibri;
+        font-size: 16px;
+        color: #555;
+        border-top: 2px solid #999;
+        padding-left: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>KineticJS-plugins Test</h1>
+    <div id="mocha"></div>
+    <div id="kinetic-container"></div>
+
+    <script src="../node_modules/mocha/mocha.js"></script>
+    <script src="../node_modules/chai/chai.js"></script>
+    <script src="../lib/kinetic-v4.7.4.js"></script>
+    <!--<script src="lib/stats.js"></script>-->
+    <script src="../dist/kinetic-plugins-dev.js"></script>
+    <script src="runner.js"></script>
+    
+    <script src="../src/shapes/Crosshair.js"></script>
+
+    <!--=============== unit tests ================-->
+
+    <!-- shapes -->
+    <script src="unit/shapes/Crosshair-test.js"></script>
+
+
+    <script>
+      if (window.mochaPhantomJS) { mochaPhantomJS.run(); }
+      else { mocha.run(); }
+    </script>
+  </body>
+</html>
