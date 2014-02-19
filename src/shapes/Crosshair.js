@@ -30,24 +30,24 @@
             // call super constructor
             Kinetic.Shape.call(this, config);
             this.className = 'Crosshair';
-            this.setDrawFunc(this._drawFunc);
+            this.drawFunc(this._drawFunc);
         },
         _drawFunc: function(context) {
-			var width_over_2 = this.getWidth() / 2;
-	        var height_over_2 = this.getHeight() / 2;
+			var width_over_2 = this.width() / 2;
+	        var height_over_2 = this.height() / 2;
 	        
 	        context.beginPath();
-	        context.moveTo(this.getInnerGapX(), 0);
+	        context.moveTo(this.innerGapX(), 0);
 	        context.lineTo(width_over_2, 0);
-	        context.moveTo(-this.getInnerGapX(), 0);
+	        context.moveTo(-this.innerGapX(), 0);
 	        context.lineTo(-width_over_2, 0);
-	        context.moveTo(0, this.getInnerGapY());
+	        context.moveTo(0, this.innerGapY());
 	        context.lineTo(0, height_over_2);
-	        context.moveTo(0, -this.getInnerGapY());
+	        context.moveTo(0, -this.innerGapY());
 	        context.lineTo(0, -height_over_2);
 	        
-	        if (this.getEncircled()) {
-	            var width_two_thirds = this.getWidth() * 2 / 3;
+	        if (this.encircled()) {
+	            var width_two_thirds = this.width() * 2 / 3;
 	            context.moveTo(0, -height_over_2);
 	            context.bezierCurveTo(width_two_thirds, -height_over_2, width_two_thirds, height_over_2, 0, height_over_2);
 	            context.bezierCurveTo(-width_two_thirds, height_over_2, -width_two_thirds, -height_over_2, 0, -height_over_2);
@@ -60,64 +60,60 @@
     Kinetic.Util.extend(Kinetic.Crosshair, Kinetic.Shape);
 
     // add getters setters
-    Kinetic.Factory.addPointGetterSetter(Kinetic.Crosshair, 'innerGap', 0);
+    Kinetic.Factory.addComponentsGetterSetter(Kinetic.Crosshair, 'innerGap', ['x', 'y']);
 
     /**
-     * set innerGap.  The innerGap is the distance between the center and the start of the crosshair line.
-     * @name setInnerGap
-     * @method
-     * @memberof Kinetic.Crosshair.prototype
-     * @param {Number} x
-     * @param {Number} y
-     * @returns {Kinetic.Crosshair}
-     * @example
-     * // set x and y <br>
-     * shape.setInnerGap({<br>
-     *   x: 5<br>
-     *   y: 5<br>
-     * });<br><br>
-     */
-
-     /**
-     * get innerGap
-     * @name getInnerGap
+     * get/set innerGap
+     * @name innerGap
+     * @param {Object} innerGap
+     * @param {Number} innerGap.x
+     * @param {Number} innerGap.y
      * @method
      * @memberof Kinetic.Crosshair.prototype
      * @returns {Object}
+     * @example
+     * // get innerGap<br>
+     * var innerGap = node.innerGap();<br><br>
+     *
+     * // set innerGap <br>
+     * shape.innerGap({<br>
+     *   x: 2<br>
+     *   y: 3<br>
+     * });
      */
-     
+
+    Kinetic.Factory.addGetterSetter(Kinetic.Crosshair, 'innerGapX', 0);
+
     /**
-     * set innerGap x
-     * @name setInnerGapX
-     * @method
-     * @memberof Kinetic.Crosshair.prototype
+     * get/set innerGap x
+     * @name innerGapX
      * @param {Number} x
-     * @returns {Kinetic.Crosshair}
-     */
-
-    /**
-     * get innerGap x
-     * @name getInnerGapX
      * @method
      * @memberof Kinetic.Crosshair.prototype
      * @returns {Number}
+     * @example
+     * // get innerGap x<br>
+     * var innerGapX = node.innerGapX();<br><br>
+     *
+     * // set innerGap x<br>
+     * node.innerGapX(2);
      */
 
+    Kinetic.Factory.addGetterSetter(Kinetic.Crosshair, 'innerGapY', 0);
+
     /**
-     * set innerGap y
-     * @name setInnerGapY
-     * @method
-     * @memberof Kinetic.Crosshair.prototype
+     * get/set innerGap y
+     * @name innerGapY
      * @param {Number} y
-     * @returns {Kinetic.Crosshair}
-     */
-
-    /**
-     * get innerGap y
-     * @name getInnerGapY
      * @method
      * @memberof Kinetic.Crosshair.prototype
      * @returns {Number}
+     * @example
+     * // get innerGap y<br>
+     * var innerGapY = node.innerGapY();<br><br>
+     *
+     * // set innerGap y<br>
+     * node.innerGapY(2);
      */
      
     Kinetic.Factory.addGetterSetter(Kinetic.Crosshair, 'encircled', false);
