@@ -13,7 +13,7 @@ If you add a file in the src directory, be sure to add the filename to the sourc
 #Testing
 Testing is the same for KineticJS.
 
-[![Build Status](https://travis-ci.org/binoculars/KineticJS-plugins.png?branch=master)](https://travis-ci.org/binoculars/KineticJS-plugins)
+[![Build Status](https://travis-ci.org/binoculars/KineticJS-plugins.png?branch=master)](https://travis-ci.org/binoculars/KineticJS-plugins) [![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/)
 
 KineticJS uses Mocha for testing.  If you haven't already, be sure to install the npm packages by running `npm install` in the project directory.  Before testing you have to build KineticJS by running `grunt dev`.The KineticJS tests must be run on a web server, so you also need to run `node server.js` in the project directory to start the node server.  Once the server is running, open http://localhost:8080/test/runner.html to run the tests in your favorite browser.  To run the tests in PhantomJS, run `mocha-phantomjs test/runner.html` in the console.
 
