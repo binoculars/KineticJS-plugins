@@ -1,4 +1,6 @@
 #About
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/binoculars/KineticJS-plugins.svg)](https://greenkeeper.io/)
 KineticJS-plugins is a framework for building plugins for KineticJS that don't fit into the categories of core shapes or KineticJS managed plugins.
 
 #Building
